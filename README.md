@@ -4,9 +4,15 @@ My projects and documentation.
 Project 1 - File permissions in Linux
 
 Project description:
+
+
+
 The research team at my organization needs to update the file permissions for certain files and directories within the projects directory. The permissions do not currently reflect the level of authorization that should be given. Checking and updating these permissions will help keep their system secure. To complete this task, I performed the following tasks,
 
-I have Checked the files and directory details:
+Check the files and directory details:
+
+
+
 The following code demonstrates how I used Linux commands to determine the existing permissions set for a specific directory in the file system.
 
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/7827c690-5971-4178-82cd-da75a730b989">
@@ -27,7 +33,10 @@ The 10-character string can be deconstructed to determine who is authorized to a
 For example, the file permissions for project_t.txt are -rw-rw-r--. Since the first character is a hyphen (-), this indicates that project_t.txt is a file, not a directory. The second, fifth, and eighth characters are all r, which indicates that user, group, and other all have read permissions. The third and sixth characters are w, which indicates that only the user and group have write permissions. No one has execute permissions for project_t.txt.
 
 
-Changing file permissions
+Changing file permissions:
+
+
+
 The organization determined that other shouldn't have write access to any of their files. To comply with this, I referred to the file permissions that I previously returned. I determined project_k.txt must have the write access removed for other.
 
 The following code demonstrates how I used Linux commands to do this:
@@ -36,7 +45,12 @@ The following code demonstrates how I used Linux commands to do this:
 
 The first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. The chmod command changes the permissions on files and directories. The first argument indicates what permissions should be changed, and the second argument specifies the file or directory. In this example, I removed write permissions from other for the project_k.txt file. After this, I used ls -la to review the updates I made.
 
-Changing file permissions on a hidden file
+
+
+Changing file permissions on a hidden file:
+
+
+
 
 The research team at my organization recently archived project_x.txt. They do not want anyone to have write access to this project, but the user and group should have read access. 
 
@@ -45,6 +59,39 @@ The following code demonstrates how I used Linux commands to change the permissi
 <img width="468" alt="image" src="https://github.com/user-attachments/assets/14951c3d-4d90-46b5-8bfe-98d0afe4f691">
 
 The first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. I know .project_x.txt is a hidden file because it starts with a period (.). In this example, I removed write permissions from the user and group, and added read permissions to the group. I removed write permissions from the user with u-w. Then, I removed write permissions from the group with g-w, and added read permissions to the group with g+r. 
+
+
+
+Change directory permissions:
+
+
+
+My organization only wants the researcher2 user to have access to the drafts directory and its contents. This means that no one other than researcher2 should have execute permissions.
+
+The following code demonstrates how I used Linux commands to change the permissions:
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/4c4b1bff-831b-4a9e-a8b9-246ffd9fcc2f">
+
+
+The first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. I previously determined that the group had execute permissions, so I used the chmod command to remove them. The researcher2 user already had execute permissions, so they did not need to be added.
+
+
+
+
+Summary:
+
+
+
+
+I changed multiple permissions to match the level of authorization my organization wanted for files and directories in the projects directory. The first step in this was using ls -la to check the permissions for the directory. This informed my decisions in the following steps. I then used the chmod command multiple times to change the permissions on files and directories.
+
+
+
+
+
+
+
+
 
 
 
