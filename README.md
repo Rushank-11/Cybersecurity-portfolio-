@@ -1,2 +1,60 @@
-# Cybersecurity-portfolio-
-My cybersecurity portfolio projects and documentation.
+# Cybersecurity-portfolio
+My projects and documentation.
+
+Project 1 - File permissions in Linux
+
+Project description:
+The research team at my organization needs to update the file permissions for certain files and directories within the projects directory. The permissions do not currently reflect the level of authorization that should be given. Checking and updating these permissions will help keep their system secure. To complete this task, I performed the following tasks,
+
+I have Checked the files and directory details:
+The following code demonstrates how I used Linux commands to determine the existing permissions set for a specific directory in the file system.
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/7827c690-5971-4178-82cd-da75a730b989">
+
+
+The first line of the screenshot displays the command I entered, and the other lines display the output. The code lists all contents of the projects directory. I used the ls command with the -la option to display a detailed listing of the file contents that also returned hidden files. The output of my command indicates that there is one directory named drafts, one hidden file named .project_x.txt, and five other project files. The 10-character string in the first column represents the permissions set on each file or directory.
+
+The 10-character string can be deconstructed to determine who is authorized to access the file and their specific permissions. The characters and what they represent are as follows:
+
+●	1st character: This character is either a d or hyphen (-) and indicates the file type. If it’s a d, it’s a directory. If it’s a hyphen (-), it’s a regular file.
+
+●	2nd-4th characters: These characters indicate the read (r), write (w), and execute (x) permissions for the user. When one of these characters is a hyphen (-) instead, it indicates that this permission is not granted to the user.
+
+●	5th-7th characters: These characters indicate the read (r), write (w), and execute (x) permissions for the group. When one of these characters is a hyphen (-) instead, it indicates that this permission is not granted for the group.
+
+●	8th-10th characters: These characters indicate the read (r), write (w), and execute (x) permissions for other. This owner type consists of all other users on the system apart from the user and the group. When one of these characters is a hyphen (-) instead, that indicates that this permission is not granted for other.
+
+For example, the file permissions for project_t.txt are -rw-rw-r--. Since the first character is a hyphen (-), this indicates that project_t.txt is a file, not a directory. The second, fifth, and eighth characters are all r, which indicates that user, group, and other all have read permissions. The third and sixth characters are w, which indicates that only the user and group have write permissions. No one has execute permissions for project_t.txt.
+
+
+Changing file permissions
+The organization determined that other shouldn't have write access to any of their files. To comply with this, I referred to the file permissions that I previously returned. I determined project_k.txt must have the write access removed for other.
+
+The following code demonstrates how I used Linux commands to do this:
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/63132e84-32d9-4704-92a3-736503006d3e">
+
+The first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. The chmod command changes the permissions on files and directories. The first argument indicates what permissions should be changed, and the second argument specifies the file or directory. In this example, I removed write permissions from other for the project_k.txt file. After this, I used ls -la to review the updates I made.
+
+Changing file permissions on a hidden file
+
+The research team at my organization recently archived project_x.txt. They do not want anyone to have write access to this project, but the user and group should have read access. 
+
+The following code demonstrates how I used Linux commands to change the permissions:
+
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/14951c3d-4d90-46b5-8bfe-98d0afe4f691">
+
+The first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. I know .project_x.txt is a hidden file because it starts with a period (.). In this example, I removed write permissions from the user and group, and added read permissions to the group. I removed write permissions from the user with u-w. Then, I removed write permissions from the group with g-w, and added read permissions to the group with g+r. 
+
+
+
+
+
+
+
+
+
+
+
+
+
