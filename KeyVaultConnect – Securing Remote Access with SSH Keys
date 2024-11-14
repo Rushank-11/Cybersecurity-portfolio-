@@ -1,0 +1,13 @@
+                                                                   KeyVaultConnect – Securing Remote Access with SSH Keys
+
+1)  Upon Successful Connection:
+    SHH, Port 22 is commonly used by clients to connect to remote systems via SSH, providing command-line interface access. 
+    After successfully verifying authentication, users can gain secure access to the full capabilities of the remote system, 
+    allowing them to execute commands, transfer files, and manage the system as needed.
+
+2) By default, 
+   user computers and organization servers keep port 22 closed unless they explicitly need remote access capabilities.
+   Keeping port 22 closed is a security measure that helps prevent unauthorized SSH access and limits exposure to potential attacks.
+
+
+3)
