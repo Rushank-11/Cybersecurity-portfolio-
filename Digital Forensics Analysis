@@ -4,6 +4,10 @@ Description: Analyzed network traffic to identify malicious actors and phishing 
 
 Tools Used: Wireshark, SMTP filters
 
+Overview:
+Business Email Compromise (BEC) is one of the most prevalent and damaging scams affecting industries worldwide. BEC scams involve malicious actors gaining access to business email accounts to conduct unauthorized transactions, often resulting in significant financial losses. From 2016 to 2019 alone, BEC scams have caused an estimated $26 billion in losses globally.
+In this project, we aim to analyze and identify BEC scams through digital forensics techniques. By examining network traffic and email communications, we can uncover patterns and indicators of compromise, helping organizations to detect and prevent such fraudulent activities.
+
 Key Findings:
 1.Identified malicious IP addresses from .pcap files:
   A.pcap: 192.168.1.4
@@ -15,13 +19,26 @@ Key Findings:
   B.pcap: "SMTP"
   C.pcap: "I can destroy everything!"
 
-3.Detailed the process of filtering and analyzing network traffic:
-  A.pcap: Used the filter smtp contains "FROM" to identify a single log from xxxxxx@xxxxx.co.uk with IP address 192.168.1.4.
-  B.pcap: Applied the same filter to find a single log from gurpartap@patriots.in with IP address 10.10.1.4.
-  C.pcap: Filtered using smtp contains "FROM" and found over 20 emails from the same source IP address 10.6.1.104, indicating a potential DDOS attack.
+3.Detailed Process of Filtering and Analyzing Network Traffic
 
+  A.pcap:
+    1. Open the .pcap File**: Load the A.pcap file into Wireshark.
+    2. Apply the Filter: Use the filter `smtp contains "FROM"` to focus on SMTP packets that contain the "FROM" field.
+    3. Identify the Log: This filter narrows down the packets to those that include the sender's email address. In this case, it identified a single log from `xxxxxx@xxxxx.co.uk` with the source IP address `192.168.1.4`.
 
-Screenshot 
-https://github.com/Rushank-11/Cybersecurity-portfolio-/blob/main/A.pcap_mail%20subject-min.png
+  B.pcap:
+    1. Open the .pcap File: Load the B.pcap file into Wireshark.
+    2. Apply the Filter: Use the same filter `smtp contains "FROM"` to focus on SMTP packets that contain the "FROM" field.
+    3. Identify the Log: This filter narrows down the packets to those that include the sender's email address. In this case, it identified a single log from `gurpartap@patriots.in` with the source IP address `10.10.1.4`.
+
+  C.pcap:
+    1. Open the .pcap File: Load the C.pcap file into Wireshark.
+    2. Apply the Filte: Use the filter `smtp contains "FROM"` to focus on SMTP packets that contain the "FROM" field.
+    3. Analyze the Results: This filter initially identified over 20 emails. Upon further inspection, it was found that all these emails originated from the same source IP address `10.6.1.104` and had "yourlife" as the first name in all of those emails.
+    4. Conclusion: The high volume of emails from the same source IP address indicated a potential DDOS attack, as the malicious actor was likely trying to flood the network with phishing emails to exploit assets.
+
+Files and Screenshots:
+https://www.notion.so/Digital-Forensics-Analysis-1a65b3674a8b8009bbcfcf422c894c1c?pvs=4
+
 
 
