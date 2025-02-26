@@ -21,3 +21,6 @@ Key Findings:
   C.pcap: Filtered using smtp contains "FROM" and found over 20 emails from the same source IP address 10.6.1.104, indicating a potential DDOS attack.
 
 
+Screenshot 
+A.pcap_mail subject-min.png
+
