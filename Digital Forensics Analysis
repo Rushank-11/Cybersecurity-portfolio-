@@ -1,0 +1,23 @@
+Digital Forensics Analysis
+
+Description: Analyzed network traffic to identify malicious actors and phishing emails using Wireshark.
+
+Tools Used: Wireshark, SMTP filters
+
+Key Findings:
+1.Identified malicious IP addresses from .pcap files:
+  A.pcap: 192.168.1.4
+  B.pcap: 10.10.1.4
+  C.pcap: 10.6.1.104
+
+2.Extracted subject lines of phishing emails:
+  A.pcap: "Testing testing 1 2 3" (Multiple attachments)
+  B.pcap: "SMTP"
+  C.pcap: "I can destroy everything!"
+
+3.Detailed the process of filtering and analyzing network traffic:
+  A.pcap: Used the filter smtp contains "FROM" to identify a single log from xxxxxx@xxxxx.co.uk with IP address 192.168.1.4.
+  B.pcap: Applied the same filter to find a single log from gurpartap@patriots.in with IP address 10.10.1.4.
+  C.pcap: Filtered using smtp contains "FROM" and found over 20 emails from the same source IP address 10.6.1.104, indicating a potential DDOS attack.
+
+
