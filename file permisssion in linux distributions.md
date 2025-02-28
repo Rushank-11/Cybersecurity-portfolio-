@@ -1,6 +1,8 @@
 File permissions in Linux
 
 Project description:
+
+
 The research team at my organization needs to update the file permissions for certain files and directories within the projects directory. The permissions do not currently reflect the level of authorization that should be given. Checking and updating these permissions will help keep their system secure. To complete this task, I performed the following tasks,
 
 Check the files and directory details:
@@ -25,6 +27,9 @@ For example, the file permissions for project_t.txt are -rw-rw-r--. Since the fi
 
 
 Changing file permissions:
+
+
+
 The organization determined that other shouldn't have write access to any of their files. To comply with this, I referred to the file permissions that I previously returned. I determined project_k.txt must have the write access removed for other.
 
 The following code demonstrates how I used Linux commands to do this:
@@ -37,6 +42,8 @@ The first two lines of the screenshot display the commands I entered, and the ot
 
 Changing file permissions on a hidden file:
 
+
+
 The research team at my organization recently archived project_x.txt. They do not want anyone to have write access to this project, but the user and group should have read access. 
 
 The following code demonstrates how I used Linux commands to change the permissions:
@@ -48,6 +55,8 @@ The first two lines of the screenshot display the commands I entered, and the ot
 
 
 Change directory permissions:
+
+
 
 My organization only wants the researcher2 user to have access to the drafts directory and its contents. This means that no one other than researcher2 should have execute permissions.
 
@@ -62,6 +71,9 @@ The first two lines of the screenshot display the commands I entered, and the ot
 
 
 Summary:
+
+
+
 I changed multiple permissions to match the level of authorization my organization wanted for files and directories in the projects directory. The first step in this was using ls -la to check the permissions for the directory. This informed my decisions in the following steps. I then used the chmod command multiple times to change the permissions on files and directories.
 
 
